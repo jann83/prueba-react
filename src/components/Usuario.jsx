@@ -4,12 +4,18 @@ import Formulario from "./Formulario"
 
 
 
-export const Usuario = ({usuario, setUsuario}) => {
+export const Usuario = ({usuario, setUsuario, eliminarUsuario}) => {
 
 
-  const {nombre, paterno, materno, email, fecha, opinion} = usuario
+  const {nombre, paterno, materno, email, fecha, opinion, id} = usuario
   
+const handleEliminar = () =>{
+const respuesta = confirm('Deseas eliminar este Usario, los datos se perdaran y no podras recuperarlos');
+ if (respuesta ){
+eliminarUsuario(id)
 
+ }
+}
 
   return (
     <div className="mx-5 my-5  bg-white shadow-md px-5 py-10 rounded-xl">
@@ -50,6 +56,7 @@ export const Usuario = ({usuario, setUsuario}) => {
      type="button" 
 
      className="py-2 px-10 bg-blue-600 hover:bg-red-700 text-white font-bold uppercase rounded-lg " 
+     onClick={handleEliminar}
      >Eliminar</button>  
       
     </div>

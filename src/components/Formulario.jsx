@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Error from "./Error";
 
-const Formulario = ({ usuarios, setUsuarios, usuario }) => {
+const Formulario = ({ usuarios, setUsuarios, usuario, setUsuario }) => {
   const [nombre, setNombre] = useState("");
   const [paterno, setPaterno] = useState("");
   const [materno, setMaterno] = useState("");
@@ -59,8 +59,10 @@ if(usuario.id ){
 //console.log('editando')
 objetoUsuario.id = usuario.id
 
-const usuariosActualizados = usuarios.map (usuarioState => usuarioState.id === usuario.id ? objetoUsuario : usuarioState  )
+const usuariosActualizados = usuarios.map (usuarioState => usuarioState.id === usuario.id 
+  ? objetoUsuario : usuarioState  )
 setUsuarios(usuariosActualizados)
+setUsuario({})
 }
 else 
 {

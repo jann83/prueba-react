@@ -3,7 +3,7 @@ import {Usuario} from "./Usuario";
 
 
 
-const ListadoUsuario = ({ usuarios,setUsuario }) => {
+const ListadoUsuario = ({ usuarios,setUsuario, eliminarUsuario }) => {
 
 
  
@@ -28,6 +28,8 @@ const ListadoUsuario = ({ usuarios,setUsuario }) => {
             key={usuario.id} 
             usuario={usuario} 
             setUsuario = {setUsuario}
+            eliminarUsuario = {eliminarUsuario}
+
             />
           ))}
         </>
